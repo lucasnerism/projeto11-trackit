@@ -32,7 +32,7 @@ export default function Habits({ id, name, days, setReload, reload }) {
           data-test="habit-day"
           key={index}
           disabled
-          selected={days.includes(index + 1)} >{d}</Button>)}
+          selected={days.includes(index)} >{d}</Button>)}
       </ContainerDays>
       <Delete data-test="habit-delete-btn">
         <TrashOutline
