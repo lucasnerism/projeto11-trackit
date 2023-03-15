@@ -1,25 +1,40 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Habits from "./pages/HabitsPage/Habits";
-import Today from "./pages/TodayPage/Today";
-import Signup from "./pages/SignupPage/Signup";
-import Login from "./pages/LoginPage/Login";
-import History from "./pages/HistoryPage/History";
-
+import HabitsPage from "./pages/HabitsPage/HabitsPage";
+import TodayPage from "./pages/TodayPage/TodayPage";
+import SignupPage from "./pages/SignupPage/SignupPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import HistoryPage from "./pages/HistoryPage/HistoryPage";
+import styled from "styled-components";
+import React from "react";
+import { UserContext } from "./UserContext";
 
 function App() {
+  const [user, setUser] = React.useState(null);
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/cadastro" element={<Signup />} />
-        <Route path="/habitos" element={<Habits />} />
-        <Route path="/hoje" element={<Today />} />
-        <Route path="/historico" element={<History />} />
-      </Routes>
-    </BrowserRouter>
+    <Container>
+      <BrowserRouter>
+        <UserContext.Provider value={{ user, setUser }}>
+          <Routes>
+
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/cadastro" element={<SignupPage />} />
+            <Route path="/habitos" element={<HabitsPage />} />
+            <Route path="/hoje" element={<TodayPage />} />
+            <Route path="/historico" element={<HistoryPage />} />
+
+          </Routes>
+        </UserContext.Provider>
+      </BrowserRouter>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: relative;
+`;
 
 export default App;

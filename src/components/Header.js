@@ -1,11 +1,16 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { UserContext } from "../UserContext";
 
 
 export default function Header() {
+  const { user } = useContext(UserContext);
+
   return (
     <Container>
-      <h1>TrackIt</h1>
-      <img src="" alt="perfil" />
+      <Link to="/"><h1>TrackIt</h1></Link>
+      <img src={user.image} alt="perfil" />
     </Container>
   );
 }
@@ -17,9 +22,10 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 18px;
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
   background-color: #126BA5;
   h1{

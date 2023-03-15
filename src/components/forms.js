@@ -1,20 +1,4 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../../assets/logo.png";
-
-export default function Login() {
-  return (
-    <Container>
-      <img src={logo} alt="logo" />
-      <Form>
-        <input placeholder="email"></input>
-        <input placeholder="senha"></input>
-        <button type="submit" >Entrar</button>
-      </Form>
-      <Link to="/cadastro">Não tem uma conta? Cadastre-se!</Link>
-    </Container>
-  );
-}
 
 const Container = styled.div`
   display: flex;
@@ -50,7 +34,7 @@ const Form = styled.form`
     }
   }
   button{
-    width: 309px;
+    width: 303px;
     height: 45px;
     border-radius: 5px;
     background: #52B6FF;
@@ -58,5 +42,12 @@ const Form = styled.form`
     border: none;
     margin-bottom: 36px;
     font-size: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:disabled{
+      opacity: 0.7;
+    }
   }
 `;
+export { Container, Form };
