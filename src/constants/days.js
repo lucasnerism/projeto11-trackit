@@ -1,0 +1,1 @@
+export const arrdays = ["D", "S", "T", "Q", "Q", "S", "S"];

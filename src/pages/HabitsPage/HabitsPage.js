@@ -12,20 +12,23 @@ import Habits from "./Habits";
 export default function HabitsPage() {
   const [habits, setHabits] = React.useState([]);
   const [create, setCreate] = React.useState(false);
-  const [reload, setReload] = React.useState([]);
-  const { token } = React.useContext(UserContext);
+  const [reload, setReload] = React.useState(false);
+  const [days, setDays] = React.useState([]);
+  const [name, setName] = React.useState("");
+  const { user } = React.useContext(UserContext);
 
   React.useEffect(() => {
     const url = `${BASE_URL}/habits`;
+
     const config = {
       headers: {
-        "Authorization": token
+        "Authorization": `Bearer ${user.token}`
       }
     };
     axios.get(url, config)
       .then(resp => setHabits(resp.data))
       .catch(err => console.log(err.response));
-  }, [reload]);
+  }, [create, reload]);
 
   return (
     <>
@@ -33,10 +36,10 @@ export default function HabitsPage() {
       <Container>
         <MeusHabitos>
           <h1>Meus hábitos</h1>
-          <button>+</button>
+          <button onClick={() => setCreate(true)}>+</button>
         </MeusHabitos>
-        {create && <CreateHabit />}
-        {habits.length !== 0 ? habits.map(<Habits />) : <p>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</p>}
+        {create && <CreateHabit setCreate={setCreate} name={name} setName={setName} days={days} setDays={setDays} />}
+        {habits.length !== 0 ? habits.map(h => <Habits setReload={setReload} reload={reload} key={h.id} id={h.id} name={h.name} days={h.days} />) : <p>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</p>}
       </Container>
       <Footer />
     </>
