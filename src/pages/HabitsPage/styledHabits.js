@@ -31,6 +31,12 @@ export const HabitCreate = styled.div`
   }
 `;
 
+export const Delete = styled.div`
+  position: absolute;
+  top: 11px;
+  right: 10px;
+`;
+
 export const ContainerHabit = styled.div`
   width: 340px;
   height: 91px;

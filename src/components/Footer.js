@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <Container>
-      <Link to="/habitos"><h1>Hábitos</h1></Link>
+    <Container data-test="menu">
+      <Link to="/habitos" data-test="habit-link"><h1>Hábitos</h1></Link>
       <ContainerProgress>
-        <Link to="/hoje"><CircularProgressbar
+        <Link to="/hoje" data-test="today-link"><CircularProgressbar
           value={66}
           text={"Hoje"}
           background
@@ -22,7 +22,7 @@ export default function Footer() {
           })}
         /></Link>
       </ContainerProgress>
-      <Link to="/historico"><h1>Histórico</h1></Link>
+      <Link to="/historico" data-test="history-link"><h1>Histórico</h1></Link>
     </Container>
   );
 }

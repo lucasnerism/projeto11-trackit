@@ -36,7 +36,7 @@ export default function HabitsPage() {
       <Container>
         <MeusHabitos>
           <h1>Meus hábitos</h1>
-          <button onClick={() => setCreate(true)}>+</button>
+          <button data-test="habit-create-btn" onClick={() => setCreate(true)}>+</button>
         </MeusHabitos>
         {create && <CreateHabit setCreate={setCreate} name={name} setName={setName} days={days} setDays={setDays} />}
         {habits.length !== 0 ? habits.map(h => <Habits setReload={setReload} reload={reload} key={h.id} id={h.id} name={h.name} days={h.days} />) : <p>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</p>}

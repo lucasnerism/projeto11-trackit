@@ -41,18 +41,24 @@ export default function CreateHabit({ setCreate, name, setName, days, setDays })
   }
 
   return (
-    <HabitCreate>
+    <HabitCreate data-test="habit-create-container">
       <input placeholder="nome do hábito"
         value={name}
+        data-test="habit-name-input"
         disabled={carregando}
         onChange={event => setName(event.target.value)}
       ></input>
       <ContainerDays>
-        {arrdays.map((d, index) => <Button key={index} disabled={carregando} selected={days.includes(index + 1)} onClick={() => handleClick(index + 1)}>{d}</Button>)}
+        {arrdays.map((d, index) => <Button
+          data-test="habit-day"
+          key={index}
+          disabled={carregando}
+          selected={days.includes(index + 1)}
+          onClick={() => handleClick(index + 1)}>{d}</Button>)}
       </ContainerDays>
       <ContainerButton>
-        <button disabled={carregando} onClick={() => setCreate(false)}>Cancelar</button>
-        <button disabled={carregando} onClick={sendHabit}>Salvar</button>
+        <button disabled={carregando} data-test="habit-create-cancel-btn" onClick={() => setCreate(false)}>Cancelar</button>
+        <button disabled={carregando} data-test="habit-create-save-btn" onClick={sendHabit}>Salvar</button>
       </ContainerButton>
     </HabitCreate>
   );

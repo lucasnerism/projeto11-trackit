@@ -1,6 +1,6 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { Button, ContainerDays, ContainerHabit } from "./styledHabits";
+import { Button, ContainerDays, ContainerHabit, Delete } from "./styledHabits";
 import { arrdays } from "../../constants/days";
 import { TrashOutline } from 'react-ionicons';
 import { useContext } from "react";
@@ -25,21 +25,26 @@ export default function Habits({ id, name, days, setReload, reload }) {
   }
 
   return (
-    <ContainerHabit>
-      <p>{name}</p>
+    <ContainerHabit data-test="habit-container">
+      <p data-test="habit-name">{name}</p>
       <ContainerDays>
-        {arrdays.map((d, index) => <Button key={index} disabled selected={days.includes(index + 1)} >{d}</Button>)}
+        {arrdays.map((d, index) => <Button
+          data-test="habit-day"
+          key={index}
+          disabled
+          selected={days.includes(index + 1)} >{d}</Button>)}
       </ContainerDays>
-      <TrashOutline
-        color={'#666666'}
-        title="delete"
-        height="15px"
-        width="15px"
-        style={{ position: "absolute", top: "11px", right: "10px" }}
-        onClick={() => {
-          if (window.confirm("Gostaria realmente de apagar esse hábito?")) deleteHabit(id);
-        }}
-      />
+      <Delete data-test="habit-delete-btn">
+        <TrashOutline
+          color={'#666666'}
+          title="delete"
+          height="15px"
+          width="15px"
+          style={{}}
+          onClick={() => {
+            if (window.confirm("Gostaria realmente de apagar esse hábito?")) deleteHabit(id);
+          }}
+        /></Delete>
     </ContainerHabit>
   );
-};;
+};

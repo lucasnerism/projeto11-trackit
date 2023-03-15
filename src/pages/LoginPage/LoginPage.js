@@ -41,20 +41,29 @@ export default function LoginPage() {
     <Container>
       <img src={logo} alt="logo" />
       <Form onSubmit={handleSubmit}>
-        <input placeholder="email" required disabled={carregando} value={form.email} name="email"
+        <input placeholder="email" required disabled={carregando}
+          value={form.email}
+          name="email"
+          data-test="email-input"
           onChange={event => handleChange(event)}></input>
-        <input placeholder="senha" required disabled={carregando} value={form.password} type="password" name="password"
+        <input placeholder="senha" required disabled={carregando}
+          value={form.password}
+          type="password"
+          name="password"
+          data-test="password-input"
           onChange={event => handleChange(event)}></input>
-        <button type="submit" disabled={carregando}>{carregando ? <ThreeDots
-          height="13"
-          width="51"
-          radius="9"
-          color="#FFFFFF"
-          ariaLabel="three-dots-loading"
-          visible={true}
-        /> : "Entrar"}</button>
+        <button type="submit"
+          data-test="login-btn"
+          disabled={carregando}>{carregando ? <ThreeDots
+            height="13"
+            width="51"
+            radius="9"
+            color="#FFFFFF"
+            ariaLabel="three-dots-loading"
+            visible={true}
+          /> : "Entrar"}</button>
       </Form>
-      <Link to="/cadastro">Não tem uma conta? Cadastre-se!</Link>
+      <Link to="/cadastro" data-test="signup-link" >Não tem uma conta? Cadastre-se!</Link>
     </Container>
   );
 }
