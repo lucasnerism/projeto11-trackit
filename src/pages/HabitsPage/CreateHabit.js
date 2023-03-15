@@ -53,8 +53,8 @@ export default function CreateHabit({ setCreate, name, setName, days, setDays })
           data-test="habit-day"
           key={index}
           disabled={carregando}
-          selected={days.includes(index + 1)}
-          onClick={() => handleClick(index + 1)}>{d}</Button>)}
+          selected={days.includes(index)}
+          onClick={() => handleClick(index)}>{d}</Button>)}
       </ContainerDays>
       <ContainerButton>
         <button disabled={carregando} data-test="habit-create-cancel-btn" onClick={() => setCreate(false)}>Cancelar</button>
