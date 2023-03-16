@@ -1,16 +1,16 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import HabitsPage from "./pages/HabitsPage/HabitsPage";
 import TodayPage from "./pages/TodayPage/TodayPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import HistoryPage from "./pages/HistoryPage/HistoryPage";
 import styled from "styled-components";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { DoneHabitsContext, UserContext } from "./constants/context";
 
 
 function App() {
-  const [user, setUser] = React.useState(null);
+  const [user, setUser] = useState(null);
   const [doneHabits, setDoneHabits] = useState(0);
 
   return (

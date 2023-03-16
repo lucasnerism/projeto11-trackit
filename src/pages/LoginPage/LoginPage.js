@@ -14,6 +14,15 @@ export default function LoginPage() {
   const [carregando, setCarregando] = React.useState(false);
   const [form, setForm] = React.useState({ email: "", password: "" });
 
+  React.useEffect(() => {
+    const usersalvo = localStorage.getItem("user");
+    if (usersalvo !== null) {
+      setUser(JSON.parse(usersalvo));
+      navigate("/hoje");
+    }
+
+  }, []);
+
   function handleSubmit(e) {
     e.preventDefault();
     setCarregando(true);
@@ -21,7 +30,9 @@ export default function LoginPage() {
 
     axios.post(url, form)
       .then(resp => {
-        setUser({ token: resp.data.token, image: resp.data.image });
+        const obj = { token: resp.data.token, image: resp.data.image };
+        setUser(obj);
+        localStorage.setItem("user", JSON.stringify(obj));
         navigate("/hoje");
       })
       .catch(err => {
