@@ -1,5 +1,3 @@
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
 import { Button, ContainerDays, ContainerHabit, Delete } from "./styledHabits";
 import { arrdays } from "../../constants/days";
 import { TrashOutline } from 'react-ionicons';

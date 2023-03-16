@@ -2,7 +2,6 @@ import axios from "axios";
 import React from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { Link, useNavigate } from "react-router-dom";
-import styled from "styled-components";
 import logo from "../../assets/logo.png";
 import { BASE_URL } from "../../constants/url";
 import { Container, Form } from "../../components/forms";
