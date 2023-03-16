@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useState } from "react";
 import { BASE_URL } from "../../constants/url";
-import { UserContext } from "../../UserContext";
+import { UserContext } from "../../constants/context";
 import { Button, ContainerButton, ContainerDays, HabitCreate } from "./styledHabits";
 import { arrdays } from "../../constants/days";
 

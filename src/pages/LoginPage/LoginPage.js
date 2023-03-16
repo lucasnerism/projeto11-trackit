@@ -1,11 +1,10 @@
 import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
 import { Link, useNavigate } from "react-router-dom";
-import styled from "styled-components";
 import logo from "../../assets/logo.png";
 import { BASE_URL } from "../../constants/url";
 import React from "react";
-import { UserContext } from "../../UserContext";
+import { UserContext } from "../../constants/context";
 import { Container, Form } from "../../components/forms";
 
 

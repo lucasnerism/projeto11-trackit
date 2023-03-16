@@ -5,24 +5,29 @@ import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import HistoryPage from "./pages/HistoryPage/HistoryPage";
 import styled from "styled-components";
-import React from "react";
-import { UserContext } from "./UserContext";
+import React, { useState } from "react";
+import { DoneHabitsContext, UserContext } from "./constants/context";
+
 
 function App() {
   const [user, setUser] = React.useState(null);
+  const [doneHabits, setDoneHabits] = useState(0);
+
   return (
     <Container>
       <BrowserRouter>
         <UserContext.Provider value={{ user, setUser }}>
-          <Routes>
+          <DoneHabitsContext.Provider value={{ doneHabits, setDoneHabits }}>
+            <Routes>
 
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/cadastro" element={<SignupPage />} />
-            <Route path="/habitos" element={<HabitsPage />} />
-            <Route path="/hoje" element={<TodayPage />} />
-            <Route path="/historico" element={<HistoryPage />} />
+              <Route path="/" element={<LoginPage />} />
+              <Route path="/cadastro" element={<SignupPage />} />
+              <Route path="/habitos" element={<HabitsPage />} />
+              <Route path="/hoje" element={<TodayPage />} />
+              <Route path="/historico" element={<HistoryPage />} />
 
-          </Routes>
+            </Routes>
+          </DoneHabitsContext.Provider>
         </UserContext.Provider>
       </BrowserRouter>
     </Container>

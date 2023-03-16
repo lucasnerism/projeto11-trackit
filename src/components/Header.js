@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { UserContext } from "../UserContext";
+import { UserContext } from "../constants/context";
 
 
 export default function Header() {
@@ -28,6 +28,7 @@ const Container = styled.div`
   transform: translateX(-50%);
   z-index: 1;
   background-color: #126BA5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   h1{
     font-family: 'Playball';
     font-weight: 400;
