@@ -36,6 +36,8 @@ export const ButtonToday = styled.button`
 `;
 
 export const ContainerToday = styled.div`
+  font-family: 'Lexend Deca';  
+  font-weight: 400;     
   width: 375px;
   padding: 70px 17px;
   display: flex;

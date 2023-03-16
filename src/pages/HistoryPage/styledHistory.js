@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const ContainerHistory = styled.div`
+  font-family: 'Lexend Deca';  
+  font-weight: 400;   
   width: 375px;
   padding: 70px 17px;
   h1{

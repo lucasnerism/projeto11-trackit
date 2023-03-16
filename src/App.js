@@ -35,6 +35,8 @@ function App() {
 }
 
 const Container = styled.div`
+  font-family: 'Lexend Deca';  
+  font-weight: 400;   
   display: flex;
   justify-content: center;
   align-items: center;

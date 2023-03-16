@@ -53,6 +53,8 @@ export default function HabitsPage() {
 }
 
 const Container = styled.div`
+  font-family: 'Lexend Deca';
+  font-weight: 400;   
   width: 375px;
   padding: 70px 17px;
   p{

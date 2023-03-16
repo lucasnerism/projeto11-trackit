@@ -38,6 +38,8 @@ export const Delete = styled.div`
 `;
 
 export const ContainerHabit = styled.div`
+  font-family: 'Lexend Deca';  
+  font-weight: 400;   
   width: 340px;
   height: 91px;
   background: #FFFFFF;
