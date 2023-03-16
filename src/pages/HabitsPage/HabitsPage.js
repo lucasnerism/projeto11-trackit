@@ -36,7 +36,7 @@ export default function HabitsPage() {
       <Container>
         <MeusHabitos>
           <h1>Meus hábitos</h1>
-          <button data-test="habit-create-btn" onClick={() => setCreate(true)}>+</button>
+          <button data-test="habit-create-btn" onClick={() => setCreate(true)}><p>+</p></button>
         </MeusHabitos>
         {create && <CreateHabit setCreate={setCreate} name={name} setName={setName} days={days} setDays={setDays} />}
         {habits.length !== 0 ? habits.map(h => <Habits
@@ -77,8 +77,15 @@ const MeusHabitos = styled.div`
     color: #FFFFFF;
     border-radius: 4.7px;
     border: none;
-    font-size: 32px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    
+    p{
+      font-size: 32px;
+      color: #FFFFFF;
+      height: 45px;
+    }
   }
 `;
 
