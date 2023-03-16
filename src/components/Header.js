@@ -22,7 +22,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 18px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);

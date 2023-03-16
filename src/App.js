@@ -38,8 +38,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  position: relative;
+  margin: auto;  
 `;
 
 export default App;
