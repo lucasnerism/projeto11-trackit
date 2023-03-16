@@ -24,10 +24,15 @@ export default function TodayPage() {
     const url = `${BASE_URL}/habits/today`;
     axios.get(url, config)
       .then(resp => {
+        const percent = 100;
         setHabits(resp.data);
         let cont = 0;
-        resp.data.forEach(el => { if (el.done) cont++; });
-        const percentage = (cont / resp.data.length) * 100;
+        resp.data.forEach(el => {
+          if (el.done) {
+            cont++;
+          }
+        });
+        const percentage = (cont / resp.data.length) * percent;
         setDoneHabits(percentage);
       })
       .catch();
@@ -38,7 +43,9 @@ export default function TodayPage() {
       <ContainerToday>
         <ContainerDay>
           <h1 data-test="today"><DayJS format="dddd, DD/MM" /></h1>
-          <p data-test="today-counter">{(doneHabits === 0 || habits.length === 0) ? "Nenhum hábito concluído ainda" : <Span sequence={true}>{`${doneHabits}% dos hábitos concluídos`}</Span>}</p>
+          <p data-test="today-counter">{(doneHabits === 0 || habits.length === 0) ? "Nenhum hábito concluído ainda" :
+            <Span sequence={true}>{`${doneHabits}% dos hábitos concluídos`}</Span>}
+          </p>
         </ContainerDay>
         {habits.map(h => (
           <TodayHabit setReload={setReload}

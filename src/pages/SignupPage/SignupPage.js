@@ -20,7 +20,7 @@ export default function SignupPage() {
     const url = `${BASE_URL}/auth/sign-up`;
 
     axios.post(url, form)
-      .then(resp => {
+      .then(() => {
         navigate("/");
       })
       .catch(err => {

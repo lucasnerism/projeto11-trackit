@@ -34,20 +34,18 @@ export default function HistoryPage() {
       .catch(err => console.log(err.response.data));
   }, []);
 
-  function changeClass({ date, view }) {
+  function changeClass({ date }) {
     const newdate = dayjs(date).format("DD/MM/YYYY");
-    if (days.length !== 0) {
-      for (let i = 0; i < days.length; i++) {
-        if (days[i].day === newdate) {
-          if (days[i].habits.some(el => el.done === false)) {
-            return "notDoneTasks";
-          } else {
-            return "doneTasks";
-          }
+    for (let i = 0; i < days.length; i++) {
+      if (days[i].day === newdate) {
+        if (days[i].habits.some(el => el.done === false)) {
+          return "notDoneTasks";
+        } else {
+          return "doneTasks";
         }
       }
     }
-  };
+  }
 
 
   return (

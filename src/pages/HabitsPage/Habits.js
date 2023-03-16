@@ -42,9 +42,11 @@ export default function Habits({ id, name, days, setReload, reload }) {
           width="15px"
           style={{}}
           onClick={() => {
-            if (window.confirm("Gostaria realmente de apagar esse hábito?")) deleteHabit(id);
+            if (window.confirm("Gostaria realmente de apagar esse hábito?")) {
+              deleteHabit(id);
+            }
           }}
         /></Delete>
     </ContainerHabit>
   );
-};
+}
