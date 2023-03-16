@@ -4,6 +4,8 @@ import { BASE_URL } from "../../constants/url";
 import { UserContext } from "../../constants/context";
 import { Button, ContainerButton, ContainerDays, HabitCreate } from "./styledHabits";
 import { arrdays } from "../../constants/days";
+import { ThreeDots } from "react-loader-spinner";
+
 
 export default function CreateHabit({ setCreate, name, setName, days, setDays }) {
   const [carregando, setCarregando] = useState(false);
@@ -58,7 +60,14 @@ export default function CreateHabit({ setCreate, name, setName, days, setDays })
       </ContainerDays>
       <ContainerButton>
         <button disabled={carregando} data-test="habit-create-cancel-btn" onClick={() => setCreate(false)}>Cancelar</button>
-        <button disabled={carregando} data-test="habit-create-save-btn" onClick={sendHabit}>Salvar</button>
+        <button disabled={carregando} data-test="habit-create-save-btn" onClick={sendHabit}>{carregando ? <ThreeDots
+          height="13"
+          width="51"
+          radius="9"
+          color="#FFFFFF"
+          ariaLabel="three-dots-loading"
+          visible={true}
+        /> : "Salvar"}</button>
       </ContainerButton>
     </HabitCreate>
   );
