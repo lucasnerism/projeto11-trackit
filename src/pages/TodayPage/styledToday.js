@@ -9,7 +9,7 @@ export const ContainerTodayHabit = styled.div`
   padding: 13px;
   display: flex;
   justify-content: space-between;
-  
+  margin-bottom: 10px;
   div{
     display: flex;
     flex-direction: column;

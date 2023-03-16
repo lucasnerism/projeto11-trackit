@@ -10,6 +10,29 @@ export const ContainerHistory = styled.div`
   }
 `;
 
+export const ContainerHistoryHabit = styled.div`
+  width: 340px;
+  height: 94px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  color: #666666;
+  padding: 13px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  div{
+    display: flex;
+    flex-direction: column;
+  }
+  h1{
+    font-size: 20px;    
+    margin-bottom: 7px;
+  }
+  p{
+    font-size: 13px;   
+  }
+`;
+
 export const ContainerCalendar = styled.div`
   .doneTasks{
     button{
