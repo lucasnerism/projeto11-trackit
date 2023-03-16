@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <Container data-test="header">
       <Link to="/"><h1>TrackIt</h1></Link>
-      <img src={user.image} onClick={localStorage.removeItem("user")} alt="perfil" />
+      <img src={user.image} alt="perfil" />
     </Container>
   );
 }
