@@ -6,7 +6,8 @@ import { BASE_URL } from "../../constants/url";
 import { DoneHabitsContext, UserContext } from "../../constants/context";
 import { ContainerDay, ContainerToday, Span } from "./styledToday";
 import TodayHabit from "./TodayHabit";
-import DayJS from 'react-dayjs';
+import dayjs from "dayjs";
+
 
 
 export default function TodayPage() {
@@ -42,7 +43,7 @@ export default function TodayPage() {
       <Header />
       <ContainerToday>
         <ContainerDay>
-          <h1 data-test="today"><DayJS format="dddd, DD/MM" /></h1>
+          <h1 data-test="today">{dayjs().format("dddd, DD/MM")}</h1>
           <p data-test="today-counter">{(doneHabits === 0 || habits.length === 0) ? "Nenhum hábito concluído ainda" :
             <Span sequence={true}>{`${doneHabits.toFixed(1).replace(/[.,]0$/, "")}% dos hábitos concluídos`}</Span>}
           </p>

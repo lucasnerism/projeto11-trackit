@@ -1,4 +1,6 @@
+import { Calendar } from "react-calendar";
 import styled from "styled-components";
+import 'react-calendar/dist/Calendar.css';
 
 export const ContainerHistory = styled.div`
   font-family: 'Lexend Deca';  
@@ -35,15 +37,33 @@ export const ContainerHistoryHabit = styled.div`
   }
 `;
 
-export const ContainerCalendar = styled.div`
-  .doneTasks{
-    button{
-      background-color: #8cc654;
-    }
-}
-  .notDoneTasks{
-    button{
-      background-color: #ea5766;
-    }
+export const StyledCalendar = styled(Calendar)`
+  border-radius: 10px;  
+
+  .doneTasks {
+    background-color: #8CC654;    
+    border-radius: 50%;
+    transform: scale(0.9);
+    font-size: 1rem;    
   }
+  .doneTasks:hover{
+    opacity: 0.8;
+    background-color: #8CC654;  
+  }
+  .notDoneTasks {
+    background-color: #EA5766;
+    background-clip: padding-box;
+    border-radius: 50%;
+    transform: scale(0.9);
+    font-size: 1rem;  
+  }
+  .notDoneTasks:hover{
+    opacity: 0.8;
+    background-color: #EA5766;
+  }
+  .react-calendar__tile {
+    height: 50px;
+}
+
 `;
+
