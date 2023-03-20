@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { BASE_URL } from "../../constants/url";
-import { DoneHabitsContext, UserContext } from "../../constants/context";
+import { DoneHabitsContext, UserContext } from "../../context/context";
 import { ContainerDay, ContainerToday, Span } from "./styledToday";
 import TodayHabit from "./TodayHabit";
 import dayjs from "dayjs";

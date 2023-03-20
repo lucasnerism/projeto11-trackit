@@ -4,14 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { BASE_URL } from "../../constants/url";
 import React from "react";
-import { UserContext } from "../../constants/context";
+import { UserContext } from "../../context/context";
 import { Container, Form } from "../../components/forms";
 
 
 export default function LoginPage() {
   const navigate = useNavigate();
   const { setUser } = React.useContext(UserContext);
-  const [carregando, setCarregando] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
   const [form, setForm] = React.useState({ email: "", password: "" });
 
   React.useEffect(() => {
@@ -25,7 +25,7 @@ export default function LoginPage() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setCarregando(true);
+    setLoading(true);
     const url = `${BASE_URL}/auth/login`;
 
     axios.post(url, form)
@@ -37,7 +37,7 @@ export default function LoginPage() {
       })
       .catch(err => {
         alert(err.response.data.details);
-        setCarregando(false);
+        setLoading(false);
       });
   }
 
@@ -51,12 +51,12 @@ export default function LoginPage() {
     <Container>
       <img src={logo} alt="logo" />
       <Form onSubmit={handleSubmit}>
-        <input placeholder="email" required disabled={carregando}
+        <input placeholder="email" required disabled={loading}
           value={form.email}
           name="email"
           data-test="email-input"
           onChange={event => handleChange(event)}></input>
-        <input placeholder="senha" required disabled={carregando}
+        <input placeholder="senha" required disabled={loading}
           value={form.password}
           type="password"
           name="password"
@@ -64,7 +64,7 @@ export default function LoginPage() {
           onChange={event => handleChange(event)}></input>
         <button type="submit"
           data-test="login-btn"
-          disabled={carregando}>{carregando ? <ThreeDots
+          disabled={loading}>{loading ? <ThreeDots
             height="13"
             width="51"
             radius="9"

@@ -6,7 +6,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import HistoryPage from "./pages/HistoryPage/HistoryPage";
 import styled from "styled-components";
 import { useState } from "react";
-import { DoneHabitsContext, UserContext } from "./constants/context";
+import { DoneHabitsContext, UserContext } from "./context/context";
 
 
 function App() {

@@ -3,7 +3,7 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { DoneHabitsContext } from "../constants/context";
+import { DoneHabitsContext } from "../context/context";
 
 export default function Footer() {
   const { doneHabits } = useContext(DoneHabitsContext);

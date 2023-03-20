@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useContext, useState } from "react";
 import { BASE_URL } from "../../constants/url";
-import { UserContext } from "../../constants/context";
+import { UserContext } from "../../context/context";
 import { Button, ContainerButton, ContainerDays, HabitCreate } from "./styledHabits";
 import { arrdays } from "../../constants/days";
 import { ThreeDots } from "react-loader-spinner";
 
 
 export default function CreateHabit({ setCreate, name, setName, days, setDays }) {
-  const [carregando, setCarregando] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { user } = useContext(UserContext);
 
   function handleClick(i) {
@@ -22,7 +22,7 @@ export default function CreateHabit({ setCreate, name, setName, days, setDays })
   }
 
   function sendHabit() {
-    setCarregando(true);
+    setLoading(true);
     const config = {
       headers: {
         "Authorization": `Bearer ${user.token}`
@@ -38,7 +38,7 @@ export default function CreateHabit({ setCreate, name, setName, days, setDays })
       })
       .catch(err => {
         alert(err.response.data.details);
-        setCarregando(false);
+        setLoading(false);
       });
   }
 
@@ -47,20 +47,20 @@ export default function CreateHabit({ setCreate, name, setName, days, setDays })
       <input placeholder="nome do hábito"
         value={name}
         data-test="habit-name-input"
-        disabled={carregando}
+        disabled={loading}
         onChange={event => setName(event.target.value)}
       ></input>
       <ContainerDays>
         {arrdays.map((d, index) => <Button
           data-test="habit-day"
           key={index}
-          disabled={carregando}
+          disabled={loading}
           selected={days.includes(index)}
           onClick={() => handleClick(index)}>{d}</Button>)}
       </ContainerDays>
       <ContainerButton>
-        <button disabled={carregando} data-test="habit-create-cancel-btn" onClick={() => setCreate(false)}>Cancelar</button>
-        <button disabled={carregando} data-test="habit-create-save-btn" onClick={sendHabit}>{carregando ? <ThreeDots
+        <button disabled={loading} data-test="habit-create-cancel-btn" onClick={() => setCreate(false)}>Cancelar</button>
+        <button disabled={loading} data-test="habit-create-save-btn" onClick={sendHabit}>{loading ? <ThreeDots
           height="13"
           width="51"
           radius="9"

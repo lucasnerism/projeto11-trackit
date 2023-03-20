@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { BASE_URL } from "../../constants/url";
-import { UserContext } from "../../constants/context";
+import { UserContext } from "../../context/context";
 import CreateHabit from "./CreateHabit";
 import Habits from "./Habits";
 

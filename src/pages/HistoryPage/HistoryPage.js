@@ -2,7 +2,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { UserContext } from "../../constants/context";
+import { UserContext } from "../../context/context";
 import { BASE_URL } from "../../constants/url";
 import { ContainerHistory, ContainerHistoryHabit, StyledCalendar } from "./styledHistory";
 import dayjs from "dayjs";

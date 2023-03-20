@@ -1,7 +1,7 @@
 import { ButtonToday, ContainerTodayHabit, Span } from "./styledToday";
 import { CheckmarkSharp } from "react-ionicons";
 import { useContext } from "react";
-import { UserContext } from "../../constants/context";
+import { UserContext } from "../../context/context";
 import { BASE_URL } from "../../constants/url";
 import axios from "axios";
 

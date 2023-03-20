@@ -8,14 +8,14 @@ import { Container, Form } from "../../components/forms";
 
 
 export default function SignupPage() {
-  const [carregando, setCarregando] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
   const [form, setForm] = React.useState({ email: "", password: "", image: "", name: "" });
   const navigate = useNavigate();
 
 
   function handleSubmit(e) {
     e.preventDefault();
-    setCarregando(true);
+    setLoading(true);
     const url = `${BASE_URL}/auth/sign-up`;
 
     axios.post(url, form)
@@ -24,7 +24,7 @@ export default function SignupPage() {
       })
       .catch(err => {
         alert(err.response.data.details);
-        setCarregando(false);
+        setLoading(false);
       });
   }
 
@@ -38,15 +38,15 @@ export default function SignupPage() {
     <Container>
       <img src={logo} alt="logo" />
       <Form onSubmit={handleSubmit}>
-        <input placeholder="email" value={form.email} disabled={carregando} name="email"
+        <input placeholder="email" value={form.email} disabled={loading} name="email"
           required onChange={event => handleChange(event)}></input>
-        <input placeholder="senha" value={form.password} disabled={carregando} type="password" name="password"
+        <input placeholder="senha" value={form.password} disabled={loading} type="password" name="password"
           required onChange={event => handleChange(event)}></input>
-        <input placeholder="nome" value={form.name} disabled={carregando} name="name"
+        <input placeholder="nome" value={form.name} disabled={loading} name="name"
           required onChange={event => handleChange(event)}></input>
-        <input placeholder="foto" value={form.image} disabled={carregando} type="url" name="image"
+        <input placeholder="foto" value={form.image} disabled={loading} type="url" name="image"
           required onChange={event => handleChange(event)}></input>
-        <button type="submit" disabled={carregando} >{carregando ? <ThreeDots
+        <button type="submit" disabled={loading} >{loading ? <ThreeDots
           height="13"
           width="51"
           radius="9"

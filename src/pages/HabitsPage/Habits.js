@@ -2,7 +2,7 @@ import { Button, ContainerDays, ContainerHabit, Delete } from "./styledHabits";
 import { arrdays } from "../../constants/days";
 import { TrashOutline } from 'react-ionicons';
 import { useContext } from "react";
-import { UserContext } from "../../constants/context";
+import { UserContext } from "../../context/context";
 import { BASE_URL } from "../../constants/url";
 import axios from "axios";
 
