@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# **[TrackIt](https://github.com/lucasnerism/track-it/)**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Essa é uma aplicação completa de acompanhamento de hábitos! Com cadastro e login.
 
-## Available Scripts
+Cada passo do desenvolvimento do projeto foi _versionada_ no`GitHub`. Vocês podem acompanhar o processo nos`commits`no [repositório do projeto](https://github.com/lucasnerism/track-it).
 
-In the project directory, you can run:
+[> O projeto pode ser acessado online aqui <](https://projeto11-trackit-lucasnerism.vercel.app/)
 
-### `npm start`
+Esse projeto foi feito utilizando apenas **React** e não foi utilizado **useEffect**
+Para executar esse projeto localmente você precisa ter o [NPM](https://www.npmjs.com/) instalado, então em um terminal na pasta do projeto digite `"npm install"`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Este projeto é sobre
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `Componentização`
+- `Utilização de estados`
+- `Utilização de contexto`
+- `Styled-components`
 
-### `npm test`
+## ✅ Requisitos Obrigatórios
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details open>
+<summary>Versionamento do código</summary>
 
-### `npm run build`
++ Versionamento usando Git é obrigatório, crie um **repositório público** no seu perfil do GitHub.
++ Faça _commits_ a cada funcionalidade implementada.
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<details open>
+<summary> Tela Login (rota `/`)</summary>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
++ O email e senha são enviados para a API conforme documentação.
++ Enquanto estiver carregando, os campos e o botão são desabilitados.
++ Em caso de sucesso, o usuário é redirecionado para a rota `/hoje`.
++ Em caso de falha, é exibido um `alert` informando o erro para o usuário e os campos/botão são reabilitados novamente.
++ Ao clicar no link para se cadastrar, o usuário é redirecionado para a rota `/cadastro`.
+</details>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<details open>
+<summary>Tela Cadastro (rota `/cadastro`)</summary>
 
-### `npm run eject`
++ Enquanto estiver carregando, os campos e o botão são desabilitados.
++ Em caso de sucesso, o usuário é redirecionado para a rota `/` (rota de login).
++ Em caso de falha, é exibido um `alert` informando o erro para o usuário e os campos/botão são reabilitados novamente.
++ Ao clicar no link para logar, o usuário é redirecionado para a rota `/` (rota de login).
+</details>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<details open>
+ <summary>Topo e Menu</summary>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ + Topo e menu tem posicionamento fixo.
+ + No menu, os 3 botões de Hábitos, Hoje e Histórico redirecionam o usuário para as rotas `/habitos`, `/hoje` e `/historico` respectivamente
+ + O botão de Hoje exibe uma barra de progresso circular indicando a porcentagem de conclusão de hábitos de hoje do usuário. 
+ </details>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<details open>
+<summary>Tela Hábitos (rota `/habitos`)</summary>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
++ Ao clicar para deletar um hábito, é exibido um `confirm` para confirmar se o usuário gostaria realmente de apagar o hábito. Se sim, é enviado um request pra API conforme documentação e os hábitos são recarregados logo em seguida.
++ Caso o usuário não tenha nenhum hábito cadastrado, é exibido um texto com essa informação.
++ Ao clicar no botão de "+", é exibido um formulário de cadastro de hábito logo abaixo do título.
++ O usuário insere o nome do hábito em um campo de texto e seleciona os dias da semana que deseja realizar o hábito.
++ Ao salvar, os dados são enviados para API conforme documentação
++ Enquanto estiver carregando, o campo de texto e o botão são desabilitados.
++ Em caso de sucesso, os campos são limpos e reabilitados, o formulário é escondido novamente e a lista de hábitos abaixo recarregada.
++ Em caso de erro, os campos são reabilitados e um alerta deve indicar o problema para o usuário.
++ Ao Cancelar, o formulário é escondido. Caso tenha dados já preenchidos, os mesmos são mantidos caso o usuário reabra o formulário de criação.
+</details>
 
-## Learn More
+<details open>
+<summary>Tela Hábitos (rota `/habitos`)</summary>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
++ Ao clicar para deletar um hábito, é exibido um `confirm` para confirmar se o usuário gostaria realmente de apagar o hábito. Se sim, é enviado um request pra API conforme documentação e os hábitos são recarregados logo em seguida.
++ Caso o usuário não tenha nenhum hábito cadastrado, é exibido um texto com essa informação.
++ Ao clicar no botão de "+", é exibido um formulário de cadastro de hábito logo abaixo do título.
++ O usuário insere o nome do hábito em um campo de texto e seleciona os dias da semana que deseja realizar o hábito.
++ Ao salvar, os dados são enviados para API conforme documentação
++ Enquanto estiver carregando, o campo de texto e o botão são desabilitados.
++ Em caso de sucesso, os campos são limpos e reabilitados, o formulário é escondido novamente e a lista de hábitos abaixo recarregada.
++ Em caso de erro, os campos são reabilitados e um alerta deve indicar o problema para o usuário.
++ Ao Cancelar, o formulário é escondido. Caso tenha dados já preenchidos, os mesmos são mantidos caso o usuário reabra o formulário de criação.
+</details>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<details open>
+<summary>Tela Hoje (rota `/hoje`)</summary>
 
-### Code Splitting
++ Carrega os hábitos de hoje do usuário.
++ O título da tela exibe o dia de hoje.    
++ No subtítulo é exibida a frase "Nenhum hábito concluído ainda" ou "x% dos hábitos concluídos", dependendo do progresso do usuário.
++ Ao marcar ou desmarcar um hábito como concluído, é enviado um request pra API conforme documentação.
++ Ao marcar um hábito como concluído, é colocada em verde a contagem da **sequência atual**.
++ Caso a sequência atual seja **igual ao recorde do usuário e maior que zero**, este também é exibido em verde.
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ✅ Requisitos Bônus
+<details open>
+<summary>Persistência de Login</summary>
 
-### Analyzing the Bundle Size
++ Após o login, o objeto do usuário é salvo na máquina utilizando **Local Storage**.
++ Ao abrir o app, se há um usuário armazenado no Local Storage redirecione o usuário direto para a tela inicial do app, evitando que ele faça login novamente.
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<details open>
+<summary>Tela Histórico `/historico`</summary>
 
-### Making a Progressive Web App
++ Nesta tela deve é exibido um calendário.    
++ No calendário, é exibido em verde os dias em que o usuário completou todos os hábitos que deveria ter completado.    
++ Já os dias que o usuário tinha hábitos para completar, porém não completou todos, são destacados em vermelho.
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<details open>
+<summary>Clique no dia</summary>
 
-### Advanced Configuration
++ No calendário da tela de Histórico, quando o usuário clicar em um dia em destaque (verde ou vermelho), é exibida a lista de hábitos do dia clicado, indicando quais hábitos ele concluiu ou não.
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
