@@ -6,7 +6,7 @@ Cada passo do desenvolvimento do projeto foi _versionada_ no`GitHub`. Vocês pod
 
 [> O projeto pode ser acessado online aqui <](https://projeto11-trackit-lucasnerism.vercel.app/)
 
-Esse projeto foi feito utilizando apenas **React** e não foi utilizado **useEffect**
+Esse projeto foi feito utilizando **React** e algumas bibliotecas.
 Para executar esse projeto localmente você precisa ter o [NPM](https://www.npmjs.com/) instalado, então em um terminal na pasta do projeto digite `"npm install"`
 
 ## Este projeto é sobre
