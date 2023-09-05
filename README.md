@@ -7,7 +7,7 @@ Cada passo do desenvolvimento do projeto foi _versionada_ no`GitHub`. Vocês pod
 [> O projeto pode ser acessado online aqui <](https://projeto11-trackit-lucasnerism.vercel.app/)
 
 Esse projeto foi feito utilizando **React** e algumas bibliotecas.
-Para executar esse projeto localmente você precisa ter o [NPM](https://www.npmjs.com/) instalado, então em um terminal na pasta do projeto digite `"npm install"`
+Para executar esse projeto localmente você precisa ter o [NPM](https://www.npmjs.com/) instalado, então em um terminal na pasta do projeto digite `"npm install"` seguido de `"npm start"`
 
 ## Este projeto é sobre
 
@@ -16,14 +16,7 @@ Para executar esse projeto localmente você precisa ter o [NPM](https://www.npmj
 - `Utilização de contexto`
 - `Styled-components`
 
-## ✅ Requisitos Obrigatórios
-
-<details open>
-<summary>Versionamento do código</summary>
-
-+ Versionamento usando Git é obrigatório, crie um **repositório público** no seu perfil do GitHub.
-+ Faça _commits_ a cada funcionalidade implementada.
-</details>
+## ✅ Funcionalidades
 
 <details open>
 <summary> Tela Login (rota `/`)</summary>
@@ -91,7 +84,6 @@ Para executar esse projeto localmente você precisa ter o [NPM](https://www.npmj
 + Caso a sequência atual seja **igual ao recorde do usuário e maior que zero**, este também é exibido em verde.
 </details>
 
-## ✅ Requisitos Bônus
 <details open>
 <summary>Persistência de Login</summary>
 
